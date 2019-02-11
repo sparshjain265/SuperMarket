@@ -1,0 +1,14 @@
+create role if not exists admin;
+create role if not exists foodManager;
+create role if not exists householdManager;
+create role if not exists sportsManager;
+create role if not exists electronicsManager;
+create role if not exists clothesManager;
+create role if not exists cashManager;
+create role if not exists customer;
+create role if not exists cashier;
+create role if not exists foodEmployee;
+create role if not exists householdEmployee;
+create role if not exists sportsEmployee;
+create role if not exists electronicsEmployee;
+create role if not exists clothesEmployee;
