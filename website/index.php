@@ -14,6 +14,9 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -28,8 +31,6 @@ require('config.php');
   <div class='header-right'>
     <a class='active' href='index.php'>Products</a>
     <a href='insert.php'>Insert</a>
-    <a href="#">Department</a>
-    <a href='#'>Sales</a>
   </div>
 </div>
 
@@ -42,7 +43,6 @@ require('config.php');
     <th>Costprice</th>
     <th>MRP</th>
     <th>Quantity</th>
-    <th>Add to cart </th>
   </tr>
   
 <?php
@@ -67,10 +67,7 @@ require('config.php');
       <td>$departmentName</td>
       <td>$costPrice</td>
       <td>$mrp</td>
-      <td>$quantity</td>
-       <td><form action='index.php' method='post'>        
-      <input type = 'submit' name='$product_id' value = 'Add' />
-   </form></td>    
+      <td>$quantity</td>    
 
     </tr>
 			";

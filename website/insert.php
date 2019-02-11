@@ -28,8 +28,6 @@ require('config.php');
   <div class='header-right'>
     <a  href='index.php'>Products</a>
     <a class='active' href='insert.php'>Insert</a>
-    <a href="#">Department</a>
-    <a href='#'>Sales</a>
   </div>
 </div>
 <div class="container">
@@ -53,7 +51,13 @@ require('config.php');
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Department Name</label>
-    <input type="text" class="form-control" name="departmentName" placeholder="Department Name">
+    <select type="text" class="form-control" name="departmentName" placeholder="Department Name">
+      <option value = "Food Section"> Food Section </option> 
+      <option value = "Household"> Household </option>
+      <option value = "Sports"> Sports </option>
+      <option value = "Electronics"> Electronics </option>
+      <option value = "Clothes"> Clothes </option>
+    </select>
     <small id="" class="form-text text-muted"></small>
   </div>
   <div class="form-group">
@@ -71,7 +75,7 @@ require('config.php');
     <input type="text" class="form-control" name="quantity" placeholder="Quantity">
     <small id="" class="form-text text-muted"></small>
   </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" >Submit</button>
       
       <?php
   require('config.php');
