@@ -7,16 +7,14 @@ grant select on customer to foodManager, householdManager, sportsManager, electr
 grant all privileges on discount to foodManager, householdManager, sportsManager, electronicsManager, clothesManager;
 grant all privileges on offers to foodManager, householdManager, sportsManager, electronicsManager, clothesManager; --needs trigger
 grant all privileges on ordered to foodManager, householdManager, sportsManager, electronicsManager, clothesManager; --needs trigger
-grant select on department to foodManager, householdManager, sportsManager, electronicsManager, clothesManager; 
-grant update (vacancy) on department to foodManager, householdManager, sportsManager, electronicsManager, clothesManager; --needs trigger
+grant select on department to foodManager, householdManager, sportsManager, electronicsManager, clothesManager, cashManager; 
+grant update (vacancy) on department to foodManager, householdManager, sportsManager, electronicsManager, clothesManager, cashManager; --needs trigger
 grant select on sales to foodManager, householdManager, sportsManager, electronicsManager, clothesManager; --needs trigger
 grant all privileges on supplier to foodManager, householdManager, sportsManager, electronicsManager, clothesManager; 
 grant all privileges on supllied to foodManager, householdManager, sportsManager, electronicsManager, clothesManager; --needs trigger
 
 -- cash manager
 grant cashier to cashManager with admin option;
-grant select on department to cashManager;
-grant update (vacancy) on department to cashManager;
 grant all privileges on employeeCashier to cashManager;
 
 -- food manager
