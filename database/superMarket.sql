@@ -22,8 +22,8 @@ CREATE TABLE product(
 
 CREATE TABLE foodSection(
 	productID INT(4),
-	manufactureDate DATE default currdate(),
-	expiryDate DATE NOT NULL default (currdate() + interval 1 year),
+	manufactureDate DATE,
+	expiryDate DATE NOT NULL,
 	quantity VARCHAR(10) NOT NULL default ' - ',
 	PRIMARY KEY (productID),
 	FOREIGN KEY (productID) REFERENCES product(productID)
