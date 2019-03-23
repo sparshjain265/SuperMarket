@@ -1,9 +1,0 @@
-create role admin;
-create role manager;
-create role cashier;
-create role customer;
-create role employeeFood;
-create role employeeHousehold;
-create role employeeElectronics;
-create role employeeSports;
-create role employeeClothes;

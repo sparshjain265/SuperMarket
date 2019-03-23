@@ -9,7 +9,7 @@ CREATE TABLE department(
 );
 
 CREATE TABLE product(
-	productID INT(4) NOT NULL CHECK(productID BETWEEN 1000 and 5999),
+	productID INT(4),
 	productName VARCHAR(50) NOT NULL,
 	brandName VARCHAR(50) NOT NULL,
 	departmentName VARCHAR(20) NOT NULL,
@@ -21,10 +21,10 @@ CREATE TABLE product(
 );
 
 CREATE TABLE foodSection(
-	productID INT(4) NOT NULL CHECK(productID BETWEEN 1000 and 1999),
+	productID INT(4),
 	manufactureDate DATE,
 	expiryDate DATE NOT NULL,
-	quantity VARCHAR(10) NOT NULL,
+	quantity VARCHAR(10) NOT NULL default ' - ',
 	PRIMARY KEY (productID),
 	FOREIGN KEY (productID) REFERENCES product(productID)
 	ON DELETE CASCADE
@@ -32,9 +32,9 @@ CREATE TABLE foodSection(
 );
 
 CREATE TABLE household(
-	productID INT(4) NOT NULL CHECK(productID BETWEEN 2000 and 2999),
-	quantity VARCHAR(10) NOT NULL,
-	category VARCHAR(50) NOT NULL,
+	productID INT(4),
+	quantity VARCHAR(10) NOT NULL default ' - ',
+	category VARCHAR(50) NOT NULL default ' - ',
 	PRIMARY KEY (productID),
 	FOREIGN KEY (productID) REFERENCES product(productID)
 	ON DELETE CASCADE
@@ -42,7 +42,7 @@ CREATE TABLE household(
 );
 
 CREATE TABLE electronics(
-	productID INT(4) NOT NULL CHECK(productID BETWEEN 3000 and 3999),
+	productID INT(4),
 	powerRating INT(1),
 	warranty VARCHAR(100),
 	details VARCHAR(200),
@@ -53,7 +53,7 @@ CREATE TABLE electronics(
 );
 
 CREATE TABLE sports(
-	productID INT(4) NOT NULL CHECK(productID BETWEEN 4000 and 4999),
+	productID INT(4),
 	warranty VARCHAR(100),
 	details VARCHAR(200),
 	category VARCHAR(50),
@@ -64,7 +64,7 @@ CREATE TABLE sports(
 );
 
 CREATE TABLE clothes(
-	productID INT(4) NOT NULL CHECK(productID BETWEEN 5000 and 5999),
+	productID INT(4),
 	category VARCHAR(50),
 	size VARCHAR(3) CHECK (size IN ("XS", "S", "M", "L", "XL", "XXL")),
 	season VARCHAR(20) CHECK (season IN("Summer Wear", "Winter Wear", "Monsoon Wear", "AllTime")),

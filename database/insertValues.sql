@@ -1,3 +1,5 @@
+set role admin;
+
 insert into department values 
     ("Food Section" , 10000 , 2),
     ("Household" , 10001 , 3),
@@ -20,27 +22,27 @@ insert into product values
     (5001 , "Jeans" , "Killer" , "Clothes" , 2700.00 , 3500.00 , 10   ),
 	(5002 , "Trousers", "BB"	, "Clothes", 4000.00, 5500.00, 0);
 
-insert into foodSection values
-    (1000 , '2018-11-10' , '2019-12-31' , "100 gm"),
-    (1001 , '2018-07-10' , '2020-12-31' , "200 gm");
+-- insert into foodSection values
+--     (1000 , '2018-11-10' , '2019-12-31' , "100 gm"),
+--     (1001 , '2018-07-10' , '2020-12-31' , "200 gm");
 
-insert into household values
-    (2000 , '1/2 kg' , 'Detergent'),
-    (2001 , '200 gm' , 'Tooth paste');
+-- insert into household values
+--     (2000 , '1/2 kg' , 'Detergent'),
+--     (2001 , '200 gm' , 'Tooth paste');
 
-insert into electronics values
-    (3000 , 5 , '2 year' , "Use for trimming"),
-    (3001 , 4 , '1/2 year' , "use for iron");
+-- insert into electronics values
+--     (3000 , 5 , '2 year' , "Use for trimming"),
+--     (3001 , 4 , '1/2 year' , "use for iron");
 
-insert into sports values
-    (4000 , '1 year' ,'Yonex racket light weight' , "Badminton"),
-    (4001 , '1/2 year' , 'Nivea balls'  , "Vollyball");
+-- insert into sports values
+--     (4000 , '1 year' ,'Yonex racket light weight' , "Badminton"),
+--     (4001 , '1/2 year' , 'Nivea balls'  , "Vollyball");
 
 
-insert into clothes values
-    (5000 , 'Tshirt' ,'XL' , "AllTime"),
-    (5001 , 'Jeans' , 'XL'  , "AllTime"),
-	(5002 , 'Trousers', 'M', "Summer Wear");
+-- insert into clothes values
+--     (5000 , 'Tshirt' ,'XL' , "AllTime"),
+--     (5001 , 'Jeans' , 'XL'  , "AllTime"),
+-- 	(5002 , 'Trousers', 'M', "Summer Wear");
 
 insert into supplier values
     (2000 , "Shakti" , 8281112720 , 'West bengal' , 'shakti@gmail.com' ),
