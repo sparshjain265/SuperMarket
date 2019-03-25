@@ -92,6 +92,8 @@ CREATE TABLE ordered(
 	PRIMARY KEY (orderID),
 	FOREIGN KEY (supplierID) REFERENCES supplier(supplierID),
 	FOREIGN KEY (productID) REFERENCES product(productID)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 );
 
 CREATE TABLE supplied(
