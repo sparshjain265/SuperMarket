@@ -16,12 +16,21 @@
       background-color: #f1f1f1;
       height: 100%;
     }
+	.scroll {
+    max-height: 250px;
+    overflow-y: auto;
+	}
+	::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
         
     /* On small screens, set height to 'auto' for the grid */
     @media screen and (max-width: 767px) {
       .row.content {height: auto;} 
     }
   </style>
+  
 </head>
 <body>
 
@@ -59,6 +68,7 @@
         <li><a href="#">Delete</a></li>
         <li><a href="#">Employee</a></li>
       </ul>
+	  
     </div>
   </div>
 </nav>
@@ -72,17 +82,64 @@
         <li><a href="#">Insert</a></li>
         <li><a href="#">Delete</a></li>
         <li><a href="#">Employee</a></li>
+
       </ul><br>
+	  <div>
+	  <form name = "mrpQuery" method = "post" action = "admin_products.php">
+    	<p>
+        	<label>MRP From:</label>
+        	<input type="range" name = "rangeLower" id="fromPrice" value="1" min="0" max="100000" 
+            	oninput="document.getElementById('fPrice').innerHTML = this.value" />
+        	<label id="fPrice"></label>
+    		</p>
+   			 <p>
+        	<label>MRP To:</label>
+        	<input type="range" name = "rangeUpper" id="toPrice" value="99999" min="0" max="100000" 
+            	oninput="document.getElementById('tPrice').innerHTML = this.value" />
+        	<label id="tPrice"></label>
+    		</p>
+
+			<label>Cost Price From:</label>
+        	<input type="range" name = "costLower" id="costFromPrice" value="0" min="0" max="100000" 
+            	oninput="document.getElementById('tcostPrice').innerHTML = this.value" />
+        	<label id="tcostPrice"></label>
+    		</p>
+
+			<label>Cost Price To:</label>
+        	<input type="range" name = "costUpper" id="costToPrice" value="99999" min="0" max="100000" 
+            	oninput="document.getElementById('lcostPrice').innerHTML = this.value" />
+        	<label id="lcostPrice"></label>
+    		</p>
+    	<p><input type="submit" value="submit"/></p>
+	   </form>
+	</div>
     </div>
     <br>
     
-    <div class="col-sm-9">
-     
+	<!-- <script>
+	function ti() {
+        var fP = document.getElementById('fPrice').innerHTML;
+        var tP = document.getElementById('tPrice').innerHTML;
+        // if (fP != '' && tP != '')
+            // window.location.replace(window.location.href + '?min_Price=' + fP + '&max_Price=' + tP);
+    }
+	</script> -->
+
+
+	
+    <div class="col-sm-9"> 
     <?php
     require('config.php');
+	
+	if ($_REQUEST['rangeLower']){
+		$rangeLower = $_REQUEST['rangeLower'];
+		$rangeUpper = $_REQUEST['rangeUpper'];
+		$costLower = $_REQUEST['costLower'];
+		$costUpper = $_REQUEST['costUpper'];
+	}
+
     
-    
-          $sql = "SELECT * FROM product";
+    $sql = "SELECT * FROM product where MRP >= $rangeLower and MRP <= $rangeUpper and costPrice >= $costLower and costPrice <= $costUpper";
       
         $run_query = mysqli_query($con,$sql);
 	if(mysqli_num_rows($run_query) > 0){
@@ -95,20 +152,24 @@
             $mrp = $row['MRP'];
             $quantity = $row['quantityStock'];
 			echo "
-            
-            <div class='col-sm-3' >
+			 
+            <div class='col-sm-3 scroll' >
            
-              <div class='well' style='background-color:pink'>
-              <div class='card' style='width: 18rem;' style='background-color:lightblue'>
-              <div class='card-body text-center '>
-        <h3 >$productName</h3>
-        <p> MRP : $mrp </p>
-        <p> Quantity left : $quantity </p>
-        <P> Brand : $brandName </p>
-        </div>
-        </div>
-                  </div>
-                </div>
+            <div class='well' style='background-color:pink'>
+			<div class='card' style='width: 20rem'>
+            <div class='card-body text-center '>
+			
+			   <h3 >$productName</h3>
+			   <p> Department name : $departmentName  </p>   
+			   <P> Brand : $brandName </p>
+			   <p> costPrice : $costPrice </p>
+			   <p> MRP : $mrp </p>
+			   <p> Quantity : $quantity </p> 
+		
+			</div>
+        	</div>
+			</div>
+			</div>
         
 			";
 		}

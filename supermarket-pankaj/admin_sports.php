@@ -82,7 +82,7 @@
     require('config.php');
     
     
-          $sql = "SELECT * FROM product where departmentName = 'sports'";
+          $sql = "SELECT * FROM sportsDetails";
       
         $run_query = mysqli_query($con,$sql);
 	if(mysqli_num_rows($run_query) > 0){
@@ -94,6 +94,9 @@
             $costPrice = $row['costPrice'];
             $mrp = $row['MRP'];
             $quantity = $row['quantityStock'];
+			$warranty = $row['warranty'];
+			$details = $row['details'];
+			$category = $row['category'];
 			echo "
             
             <div class='col-sm-3' >
@@ -101,10 +104,13 @@
               <div class='well' style='background-color:pink'>
               <div class='card' style='width: 18rem;' style='background-color:lightblue'>
               <div class='card-body text-center '>
-        <h3 >$productName</h3>
-        <p> MRP : $mrp </p>
-        <p> Quantity left : $quantity </p>
-        <P> Brand : $brandName </p>
+				<h3 >$productName</h3>
+			   <P> Brand : $brandName </p>
+			   <p> costPrice : $costPrice </p>
+			   <p> MRP : $mrp </p>
+			   <p> Warranty : $warranty </p>
+			   <p> Details : $details </p>
+			   <p> Category : $category </p>
         </div>
         </div>
                   </div>

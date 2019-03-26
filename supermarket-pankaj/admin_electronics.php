@@ -82,18 +82,21 @@
     require('config.php');
     
     
-          $sql = "SELECT * FROM product where departmentName = 'electronics'";
+          $sql = "SELECT * FROM electronicsDetails";
       
         $run_query = mysqli_query($con,$sql);
-	if(mysqli_num_rows($run_query) > 0){
+	    if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
 			$productID   = $row['productID'];
 			$productName  = $row['productName'];
 			$brandName = $row['brandName'];
 			$departmentName = $row['departmentName'];
-            $costPrice = $row['costPrice'];
-            $mrp = $row['MRP'];
-            $quantity = $row['quantityStock'];
+      		$costPrice = $row['costPrice'];
+      		$mrp = $row['MRP'];
+			$quantity = $row['quantityStock'];
+			$powerRating = $row['powerRating'];
+			$warranty = $row['warranty'];
+			$details = $row['details'];
 			echo "
             
             <div class='col-sm-3' >
@@ -102,9 +105,13 @@
               <div class='card' style='width: 18rem;' style='background-color:lightblue'>
               <div class='card-body text-center '>
         <h3 >$productName</h3>
+        <P> Brand : $brandName </p>
+        <p> costPrice : $costPrice </p>
         <p> MRP : $mrp </p>
         <p> Quantity left : $quantity </p>
-        <P> Brand : $brandName </p>
+        <p> Power Rating : $powerRating </p>
+        <p> Warranty : $warranty </p>
+        <p> Details : $details </p>
         </div>
         </div>
                   </div>

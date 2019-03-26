@@ -82,7 +82,7 @@
     require('config.php');
     
     
-          $sql = "SELECT * FROM product where departmentName = 'Food Section'";
+          $sql = "SELECT * FROM foodDetails";
       
         $run_query = mysqli_query($con,$sql);
 	if(mysqli_num_rows($run_query) > 0){
@@ -93,7 +93,10 @@
 			$departmentName = $row['departmentName'];
             $costPrice = $row['costPrice'];
             $mrp = $row['MRP'];
-            $quantity = $row['quantityStock'];
+			$quantity = $row['quantityStock'];
+			$manufactureDate = $row['manufactureDate'];
+			$expiryDate = $row['expiryDate'];
+			$quantityDetails = $row['quantity'];
 			echo "
             
             <div class='col-sm-3' >
@@ -102,9 +105,13 @@
               <div class='card' style='width: 18rem;' style='background-color:lightblue'>
               <div class='card-body text-center '>
         <h3 >$productName</h3>
+        <P> Brand : $brandName </p>
+        <p> costPrice : $costPrice </p>
         <p> MRP : $mrp </p>
         <p> Quantity left : $quantity </p>
-        <P> Brand : $brandName </p>
+        <p> Manufacture Date : $manufactureDate </p>
+        <p> Expiry Date : $expiryDate </p>
+        <p> Quantity (packet) : $quantityDetails </p>
         </div>
         </div>
                   </div>

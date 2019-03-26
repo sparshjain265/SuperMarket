@@ -82,18 +82,21 @@
     require('config.php');
     
     
-          $sql = "SELECT * FROM product where departmentName = 'clothes' ";
+          $sql = "SELECT * FROM clothesDetails ";
       
-        $run_query = mysqli_query($con,$sql);
-	if(mysqli_num_rows($run_query) > 0){
-		while($row = mysqli_fetch_array($run_query)){
-			$productID   = $row['productID'];
-			$productName  = $row['productName'];
-			$brandName = $row['brandName'];
-			$departmentName = $row['departmentName'];
-            $costPrice = $row['costPrice'];
-            $mrp = $row['MRP'];
-            $quantity = $row['quantityStock'];
+          $run_query = mysqli_query($con,$sql);
+	        if(mysqli_num_rows($run_query) > 0){
+		      while($row = mysqli_fetch_array($run_query)){
+			    $productID   = $row['productID'];
+			    $productName  = $row['productName'];
+			    $brandName = $row['brandName'];
+			    $departmentName = $row['departmentName'];
+          $costPrice = $row['costPrice'];
+          $mrp = $row['MRP'];
+          $quantity = $row['quantityStock'];
+          $category = $row['category'];
+          $size = $row['size'];
+          $season = $row['season'];
 			echo "
             
             <div class='col-sm-3' >
@@ -102,9 +105,14 @@
               <div class='card' style='width: 18rem;' style='background-color:lightblue'>
               <div class='card-body text-center '>
         <h3 >$productName</h3>
+        <P> Brand : $brandName </p>
+        <p> costPrice : $costPrice </p>
         <p> MRP : $mrp </p>
         <p> Quantity left : $quantity </p>
-        <P> Brand : $brandName </p>
+        <p> Category : $category </p>
+        <p> Size : $size </p>
+        <p> Season : $season </p>
+        
         </div>
         </div>
                   </div>
