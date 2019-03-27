@@ -25,7 +25,6 @@ end //
 
 create or replace trigger manage_offer
 before insert on offers
-
 for each row 
 begin 
     set @currentRole = (select current_role());
@@ -50,10 +49,10 @@ begin
         end if;
     end if;
 end //
+
 
 create or replace trigger manage_order
 before insert on ordered
-
 for each row 
 begin 
     set @currentRole = (select current_role());
@@ -79,9 +78,9 @@ begin
     end if;
 end //
 
+
 create or replace trigger manage_vacancy
 before update on department
-
 for each row 
 begin 
     set @currentRole = (select current_role());
@@ -108,10 +107,8 @@ begin
 end //
 
 
-
 create or replace trigger manage_supply
 before insert on supplied
-
 for each row 
 begin 
     set @currentRole = (select current_role());
@@ -138,26 +135,8 @@ begin
 end //
 
 
-
-create or replace trigger sales_consistency
-before insert on sales
-
-for each row
-begin
-    set @quantityAvailable = (select quantityStock from product where productID = NEW.productID);
-    if(NEW.quantitySold > @quantityAvailable) then
-        SIGNAL SQLSTATE "45003"
-        set MESSAGE_TEXT = "Insufficient Quantity!";
-    else
-        update product set quantityStock = quantityStock - NEW.quantitySold where productID = NEW.productID;
-    end if;
-end //
-
-
-
 create or replace trigger stock_consistency
 before insert on supplied
-
 for each row
 begin
     set @alreadySupplied = (select sum(quantitySupplied) from supplied group by orderID having orderID = NEW.orderID);
@@ -179,5 +158,42 @@ begin
     end if;
 end //
 
+
+create or replace trigger sales_consistency
+before insert on sales
+for each row
+begin
+    set @quantityAvailable = (select quantityStock from product where productID = NEW.productID);
+    if(NEW.quantitySold > @quantityAvailable) then
+        SIGNAL SQLSTATE "45003"
+        set MESSAGE_TEXT = "Insufficient Quantity!";
+    else
+        -- get the discount
+        set @MRP = (select MRP from product where productID = NEW.productID);
+        set @discount = 0;
+        if(isNULL(NEW.discountID)) then
+            set @discount = 0;
+        else 
+            set @discountPercent = (select discountPercent from discount where discountID = NEW.discountID);
+            set @discountAmount = (select amount from discount where discountID = NEW.discountID);
+            if(@discountAmount < (@MRP * @discountPercent)) then
+                set @discount = @discountAmount;
+            else
+                set @discount = @MRP * @discountPercent;
+            end if;    
+        end if;
+    
+        update bill set amount = amount + NEW.quantitySold * (@MRP - @discount) where billNo = NEW.billNo;
+        update product set quantityStock = quantityStock - NEW.quantitySold where productID = NEW.productID;
+    end if;
+end //
+
+
+create or replace trigger update_customer_value
+after update on bill
+for each row
+begin
+    update customer set moneySpent = moneySpent + NEW.amount where customerID = NEW.customerID;
+end //
 
 delimiter ; 
