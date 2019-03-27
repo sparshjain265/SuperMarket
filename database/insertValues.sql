@@ -6,7 +6,8 @@ insert into department values
     ("Electronics" , 10002 , 4),
     ("Sports" , 10003 , 5),
     ("Clothes" , 10004 , 1),
-    ("Manager" , 10010 , 1);
+    ("Cash", 10002, 1),
+    ("Management" , 10010 , 1);
 
 
 insert into product values    

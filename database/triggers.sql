@@ -1,6 +1,33 @@
 -- This file contains all the triggers in the super market 
 delimiter //
 
+create or replace trigger manage_product
+before update on product
+for each row 
+begin 
+    set @currentRole = (select current_role());
+    set @dept = (select departmentName from product where productID = NEW.productID);
+
+    if(@currentRole <> 'admin') then
+        if (@currentRole <> 'foodManager' and @dept = 'Food Section') then
+            SIGNAL SQLSTATE "45002"
+            set MESSAGE_TEXT = "Unauthorized access!";
+        elseif (@currentRole <> 'householdManager' and @dept = 'Household') then
+            SIGNAL SQLSTATE "45002"
+            set MESSAGE_TEXT = "Unauthorized access!";
+        elseif (@currentRole <> 'sportsManager' and @dept = 'Sports') then
+            SIGNAL SQLSTATE "45002"
+            set MESSAGE_TEXT = "Unauthorized access!";
+        elseif (@currentRole <> 'electronicsManager' and @dept = 'Electronics') then
+            SIGNAL SQLSTATE "45002"
+            set MESSAGE_TEXT = "Unauthorized access!";
+        elseif (@currentRole <> 'clothesManager' and @dept = 'Clothes') then
+            SIGNAL SQLSTATE "45002"
+            set MESSAGE_TEXT = "Unauthorized access!";
+        end if;
+    end if;
+end //
+
 create or replace trigger product_dept 
 after insert on product
 for each row
@@ -102,6 +129,9 @@ begin
         elseif (@currentRole <> 'clothesManager' and @dept = 'Clothes') then
             SIGNAL SQLSTATE "45002"
             set MESSAGE_TEXT = "Unauthorized access!";
+        elseif (@currentRole <> 'cashManager' and @dept = 'Cash') then
+            SIGNAL SQLSTATE "45002"
+            set MESSAGE_TEXT = "Unauthorized access!";
         end if;
     end if;
 end //
@@ -132,13 +162,7 @@ begin
             set MESSAGE_TEXT = "Unauthorized access!";
         end if;
     end if;
-end //
 
-
-create or replace trigger stock_consistency
-before insert on supplied
-for each row
-begin
     set @alreadySupplied = (select sum(quantitySupplied) from supplied group by orderID having orderID = NEW.orderID);
     if(isNULL(@alreadySupplied)) then
         set @alreadySupplied = 0;
@@ -156,6 +180,7 @@ begin
         set @productID = (select productID from ordered where orderID = NEW.orderID);
         update product set quantityStock = quantityStock + NEW.quantitySupplied where productID = (@productID);
     end if;
+
 end //
 
 
