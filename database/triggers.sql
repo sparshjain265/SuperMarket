@@ -137,4 +137,47 @@ begin
     end if;
 end //
 
+
+
+create or replace trigger sales_consistency
+before insert on sales
+
+for each row
+begin
+    set @quantityAvailable = (select quantityStock from product where productID = NEW.productID);
+    if(NEW.quantitySold > @quantityAvailable) then
+        SIGNAL SQLSTATE "45003"
+        set MESSAGE_TEXT = "Insufficient Quantity!";
+    else
+        update product set quantityStock = quantityStock - NEW.quantitySold where productID = NEW.productID;
+    end if;
+end //
+
+
+
+create or replace trigger stock_consistency
+before insert on supplied
+
+for each row
+begin
+    set @alreadySupplied = (select sum(quantitySupplied) from supplied group by orderID having orderID = NEW.orderID);
+    if(isNULL(@alreadySupplied)) then
+        set @alreadySupplied = 0;
+    end if;
+
+    set @quantityOrdered = (select quantityOrdered from ordered where orderID = NEW.orderID);
+    if(isNULL(@quantityOrdered)) then
+        set @quantityOrdered = 0;
+    end if;
+
+    if(NEW.quantitySupplied > (@quantityOrdered - @alreadySupplied)) then
+        SIGNAL SQLSTATE "45004"
+        set MESSAGE_TEXT = "Fraudulent Supply! Exceeds ordered quantity!";
+    else
+        set @productID = (select productID from ordered where orderID = NEW.orderID);
+        update product set quantityStock = quantityStock + NEW.quantitySupplied where productID = (@productID);
+    end if;
+end //
+
+
 delimiter ; 
