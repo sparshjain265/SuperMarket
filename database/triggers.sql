@@ -189,9 +189,14 @@ before insert on sales
 for each row
 begin
     set @quantityAvailable = (select quantityStock from product where productID = NEW.productID);
+    set @validity = (select validUpto from discount where discountID = NEW.discountID);
+    set @billDate = (select billDate from bill where billNo = NEW.billNo);
     if(NEW.quantitySold > @quantityAvailable) then
         SIGNAL SQLSTATE "45003"
         set MESSAGE_TEXT = "Insufficient Quantity!";
+    elseif(@billDate > @validity) then
+        SIGNAL SQLSTATE "45004"
+        set MESSAGE_TEXT = "Discount Expired!";
     else
         -- get the discount
         set @MRP = (select MRP from product where productID = NEW.productID);
@@ -201,16 +206,17 @@ begin
         else 
             set @discountPercent = (select discountPercent from discount where discountID = NEW.discountID);
             set @discountAmount = (select amount from discount where discountID = NEW.discountID);
-            if(@discountAmount < (@MRP * @discountPercent)) then
+            if(@discountAmount < (@MRP * @discountPercent * 0.01)) then
                 set @discount = @discountAmount;
             else
-                set @discount = @MRP * @discountPercent;
+                set @discount = @MRP * @discountPercent * 0.01;
             end if;    
         end if;
-    
-        update bill set amount = amount + NEW.quantitySold * (@MRP - @discount) where billNo = NEW.billNo;
-        update product set quantityStock = quantityStock - NEW.quantitySold where productID = NEW.productID;
     end if;
+    
+    update bill set amount = amount + NEW.quantitySold * (@MRP - @discount) where billNo = NEW.billNo;
+    update product set quantityStock = quantityStock - NEW.quantitySold where productID = NEW.productID;
+
 end //
 
 
