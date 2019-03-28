@@ -206,6 +206,15 @@ begin
         else 
             set @discountPercent = (select discountPercent from discount where discountID = NEW.discountID);
             set @discountAmount = (select amount from discount where discountID = NEW.discountID);
+
+            if(isNULL(@discountAmount)) then
+                set @discountAmount = 0;
+            end if;
+
+            if(isNULL(@discountPercent)) then
+                set @discountPercent = 0;
+            end if;
+
             if(@discountAmount < (@MRP * @discountPercent * 0.01)) then
                 set @discount = @discountAmount;
             else
