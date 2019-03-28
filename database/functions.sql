@@ -68,4 +68,19 @@ begin
 
 end //
 
+create or replace procedure unfulfilledOrders()
+begin
+
+    with A as
+    (select orderID, SUM(quantitySupplied) as quantitySupplied from supplied group by orderID)
+    select ordered.orderID, supplierID, productID, quantityOrdered, quantitySupplied, orderDate, datediff(curdate(), orderDate) as Days_Passed
+    from ordered left join A on ordered.orderID = A.orderID;
+
+end//
+
+create or replace procedure getDiscounts(in pid int)
+begin
+    select * from viewDiscounts where productID = pid;
+end//
+
 delimiter ;
