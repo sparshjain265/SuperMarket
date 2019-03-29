@@ -74,7 +74,7 @@ begin
     with A as
     (select orderID, SUM(quantitySupplied) as quantitySupplied from supplied group by orderID)
     select ordered.orderID, supplierID, productID, quantityOrdered, quantitySupplied, orderDate, datediff(curdate(), orderDate) as Days_Passed
-    from ordered left join A on ordered.orderID = A.orderID;
+    from ordered left join A on ordered.orderID = A.orderID where quantitySupplied < quantityOrdered;
 
 end//
 

@@ -1,91 +1,202 @@
-set role admin;
+INSERT INTO department( departmentName, managerID, vacancy ) VALUES ( 'Cash', 10006, 0 ); 
+INSERT INTO department( departmentName, managerID, vacancy ) VALUES ( 'Clothes', 10005, 0 ); 
+INSERT INTO department( departmentName, managerID, vacancy ) VALUES ( 'Electronics', 10003, 0 ); 
+INSERT INTO department( departmentName, managerID, vacancy ) VALUES ( 'Food Section', 10001, 0 ); 
+INSERT INTO department( departmentName, managerID, vacancy ) VALUES ( 'Household', 10002, 0 ); 
+INSERT INTO department( departmentName, managerID, vacancy ) VALUES ( 'Management', 10000, 0 ); 
+INSERT INTO department( departmentName, managerID, vacancy ) VALUES ( 'Sports', 10004, 0 );
 
-insert into department values 
-    ("Food Section" , 10000 , 2),
-    ("Household" , 10001 , 3),
-    ("Electronics" , 10002 , 4),
-    ("Sports" , 10003 , 5),
-    ("Clothes" , 10004 , 1),
-    ("Cash", 10002, 1),
-    ("Management" , 10010 , 1);
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5003, 'Good Day', 'Britannia', 'Food Section', 15.00, 20.00, 79 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5004, 'Hide n Seek', 'Parle', 'Food Section', 24.00, 30.00, 83 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5005, 'Choco Pie', 'Lotte', 'Food Section', 6.50, 10.00, 146 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5006, 'Choco Pie (6 Pack)', 'Lotte', 'Food Section', 39.00, 60.00, 48 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5007, 'Butter', 'Amul', 'Food Section', 38.00, 50.00, 9 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5008, 'Surf Excel', 'Unilever', 'Household', 53.00, 75.00, 199 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5009, 'Colgate', 'Unilever', 'Household', 32.00, 40.00, 250 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5010, 'Dettol Soap', 'Dettol', 'Household', 8.00, 12.00, 399 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5011, 'Garnier Face Wash', 'Garnier', 'Household', 52.00, 60.00, 99 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5012, 'Head and Shoulders Anti Dandruff Shampoo', 'H&S', 'Household', 78.00, 90.00, 150 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5013, 'ROG 102', 'Asus', 'Electronics', 60000.00, 78000.00, 3 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5014, 'iPhone X', 'Apple', 'Electronics', 90000.00, 99998.00, 9 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5015, 'Galaxy S10', 'Samsung', 'Electronics', 92000.00, 100998.00, 10 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5016, 'Bravia TV B80', 'Sony', 'Electronics', 32000.00, 35000.00, 5 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5017, 'BT404 Wireless Headphones', 'Sennheiser', 'Electronics', 5400.00, 6990.00, 24 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5018, 'Badminton Racket', 'Yonex', 'Sports', 1200.00, 1700.00, 8 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5019, 'Volley Ball', 'Nivea', 'Sports', 600.00, 800.00, 19 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5020, 'Nike Sports Shoes ', 'Nike', 'Sports', 3600.00, 4800.00, 3 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5021, 'Cricket Bat', 'SS', 'Sports', 4068.00, 4698.00, 14 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5022, 'Hero Ranger', 'Hero', 'Sports', 4006.00, 6599.00, 3 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5023, 'Blue Slim Fit Jeans', 'Killer', 'Clothes', 1200.00, 1750.00, 19 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5024, 'X-Line Jet Black Jeans', 'Lee', 'Clothes', 1600.00, 2290.00, 20 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5025, 'Special Edition T-Shit', 'American Crew', 'Clothes', 600.00, 780.00, 48 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5026, 'Sky Blue Formal Shirt', 'Van Heusen', 'Clothes', 1305.00, 1900.00, 37 ); 
+INSERT INTO product( productID, productName, brandName, departmentName, costPrice, MRP, quantityStock ) VALUES ( 5027, 'Dark Blue Trousers', 'BlackBerry', 'Clothes', 1800.00, 2390.00, 38 ); 
 
+DELETE FROM clothes;
+INSERT INTO clothes( productID, category, size, season ) VALUES ( 5023, 'Women''s Jeans', 'M', 'All Time' ); 
+INSERT INTO clothes( productID, category, size, season ) VALUES ( 5024, 'Mens Jeans', 'M', 'All Time' ); 
+INSERT INTO clothes( productID, category, size, season ) VALUES ( 5025, 'Stan Lee Special', 'M', 'Summer Wear' ); 
+INSERT INTO clothes( productID, category, size, season ) VALUES ( 5026, 'Mens Formal', 'M', 'Summer Wear' ); 
+INSERT INTO clothes( productID, category, size, season ) VALUES ( 5027, 'Mens Formal', 'L', 'All Time' ); 
 
-insert into product values    
-    (1000 , "Biscuits" , "Britania" , "Food Section" , 15.00 , 20.00 , 100   ),
-    (1001 , "Maggi" , "parle" , "Food Section" , 17.00 , 23.00 , 100   ),
-    (2000 , "Surf Excel" , "Rin" , "Household" , 30.00 , 60.00 , 200   ),
-    (2001 , "Tooth paste" , "Colgate" , "Household" , 25.00 , 30.00 , 100   ),
-    (3000 , "Trimmer" , "Philips" , "Electronics" , 800.00 , 1099.00 , 20   ),
-    (3001 , "Iron" , "Usha" , "Electronics" , 1000.00 , 1220.00 , 20   ),
-    (4000 , "Racket" , "Yonex" , "Sports" , 1200.00 , 1700.00 , 5   ),
-    (4001 , "Volley ball" , "Nivea" , "Sports" , 600.00 , 800.00 , 100   ),
-    (5000 , "Tshirts" , "Denim" , "Clothes" , 1200.00 , 2000.00 , 10   ),
-    (5001 , "Jeans" , "Killer" , "Clothes" , 2700.00 , 3500.00 , 10   ),
-	(5002 , "Trousers", "BB"	, "Clothes", 4000.00, 5500.00, 0);
+DELETE FROM electronics;
+INSERT INTO electronics( productID, powerRating, warranty, details ) VALUES ( 5013, null, '1 Year (+2 years extended) on-site warranty* + 6 months for consumables', 'Gaming Laptop with 16GB DDR4 RAM, TB Hard Disk, Intel Core i7 7th Gen Processor' ); 
+INSERT INTO electronics( productID, powerRating, warranty, details ) VALUES ( 5014, null, '1 Year Manufactoring Warranty', '3GB RAM, 128GB Internal Memory, Space Gray' ); 
+INSERT INTO electronics( productID, powerRating, warranty, details ) VALUES ( 5015, null, '1 Year Manufacturing Warranty', '6GB RAM, 256GB Memory, Midnight Black' ); 
+INSERT INTO electronics( productID, powerRating, warranty, details ) VALUES ( 5016, 4, '6 months warranty, please visit customer service center', '32 inch smart TV' ); 
+INSERT INTO electronics( productID, powerRating, warranty, details ) VALUES ( 5017, null, '6 months service warranty', 'Wireless headphones with bluetooth 4.0 connectivity and in built mic' ); 
 
--- update foodSection set 
---     (1000 , '2018-11-10' , '2019-12-31' , "100 gm"),
---     (1001 , '2018-07-10' , '2020-12-31' , "200 gm");
+DELETE FROM foodSection;
+INSERT INTO foodSection( productID, manufactureDate, expiryDate, quantity ) VALUES ( 5003, '2019-03-30', '2019-12-30', '150gm' ); 
+INSERT INTO foodSection( productID, manufactureDate, expiryDate, quantity ) VALUES ( 5004, '2019-03-28', '2019-07-30', '100gm' ); 
+INSERT INTO foodSection( productID, manufactureDate, expiryDate, quantity ) VALUES ( 5005, '2019-03-30', '2019-06-30', '50gm' ); 
+INSERT INTO foodSection( productID, manufactureDate, expiryDate, quantity ) VALUES ( 5006, '2019-03-29', '2019-06-29', '50gm x 6' ); 
+INSERT INTO foodSection( productID, manufactureDate, expiryDate, quantity ) VALUES ( 5007, '2019-03-29', '2019-04-10', '100gm ' ); 
 
--- update household set
---     (2000 , '1/2 kg' , 'Detergent'),
---     (2001 , '200 gm' , 'Tooth paste');
+DELETE FROM household;
+INSERT INTO household( productID, quantity, category ) VALUES ( 5008, '1kg', 'Detergent' ); 
+INSERT INTO household( productID, quantity, category ) VALUES ( 5009, '100gm', 'Toothpaste' ); 
+INSERT INTO household( productID, quantity, category ) VALUES ( 5010, 'Soap Bar', '50gm' ); 
+INSERT INTO household( productID, quantity, category ) VALUES ( 5011, 'Face Wash', '150gm' ); 
+INSERT INTO household( productID, quantity, category ) VALUES ( 5012, 'Shampoo', '150gm' ); 
 
--- update electronics set
---     (3000 , 5 , '2 year' , "Use for trimming"),
---     (3001 , 4 , '1/2 year' , "use for iron");
+DELETE FROM sports;
+INSERT INTO sports( productID, warranty, details, category ) VALUES ( 5018, null, null, 'Badminton' ); 
+INSERT INTO sports( productID, warranty, details, category ) VALUES ( 5019, null, null, 'Balls' ); 
+INSERT INTO sports( productID, warranty, details, category ) VALUES ( 5020, null, 'Red n Blue Vibrant Sport Shoes', 'Shoes' ); 
+INSERT INTO sports( productID, warranty, details, category ) VALUES ( 5021, null, 'Cricket Bat suitable to play with Tennis Balls only', 'Bats' ); 
+INSERT INTO sports( productID, warranty, details, category ) VALUES ( 5022, null, '6 Gear 16" cycle', 'Cycles' ); 
 
--- update sports set
---     (4000 , '1 year' ,'Yonex racket light weight' , "Badminton"),
---     (4001 , '1/2 year' , 'Nivea balls'  , "Vollyball");
+INSERT INTO supplier( supplierID, supplierName, phoneNo, supplierAddress, emailID ) VALUES ( 5002, 'Ram Krishna Wholesale', 6548524593, 'Haryana', 'rk@gmail.com' ); 
+INSERT INTO supplier( supplierID, supplierName, phoneNo, supplierAddress, emailID ) VALUES ( 5003, 'EveryDay Wholesale', 7894655842, 'Delhi', 'ed@gmail.com' ); 
+INSERT INTO supplier( supplierID, supplierName, phoneNo, supplierAddress, emailID ) VALUES ( 5004, 'Amul Distributors', 5489652658, 'Gujrat', 'amul@gmail.com' ); 
+INSERT INTO supplier( supplierID, supplierName, phoneNo, supplierAddress, emailID ) VALUES ( 5005, 'Asus Distributors', 4587648569, 'Chennai', 'asus@gmail.com' ); 
+INSERT INTO supplier( supplierID, supplierName, phoneNo, supplierAddress, emailID ) VALUES ( 5006, 'iStore', 5248651546, 'Mumbai', 'iStore@gmail.com' ); 
+INSERT INTO supplier( supplierID, supplierName, phoneNo, supplierAddress, emailID ) VALUES ( 5007, 'Galaxy Store', 8457962354, 'Delhi', 'samsung@gmail.com' ); 
+INSERT INTO supplier( supplierID, supplierName, phoneNo, supplierAddress, emailID ) VALUES ( 5008, 'E-Supply Distributors', 8564984579, 'Meerut', 'es@gmail.com' ); 
+INSERT INTO supplier( supplierID, supplierName, phoneNo, supplierAddress, emailID ) VALUES ( 5009, 'Super Sports Wholesale', 7854865985, 'Meerut', 'ss@gmail.com' ); 
+INSERT INTO supplier( supplierID, supplierName, phoneNo, supplierAddress, emailID ) VALUES ( 5010, 'LifeStyle', 7854965235, 'Coimbatore', 'ls@gmail.com' ); 
+INSERT INTO supplier( supplierID, supplierName, phoneNo, supplierAddress, emailID ) VALUES ( 5011, 'VS Suppliers', 8545984621, 'Chennai', 'vs@gmail.com' ); 
+INSERT INTO supplier( supplierID, supplierName, phoneNo, supplierAddress, emailID ) VALUES ( 5012, 'BB Distributors', 9785468523, 'Delhi', 'bb@gmail.com' ); 
 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5005, 5002, 5003, '2019-02-28', 100 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5006, 5002, 5004, '2019-02-28', 100 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5007, 5002, 5005, '2019-02-28', 200 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5008, 5002, 5006, '2019-02-28', 50 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5009, 5004, 5007, '2019-03-03', 10 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5010, 5003, 5008, '2019-03-03', 200 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5011, 5003, 5009, '2019-03-03', 250 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5012, 5003, 5010, '2019-03-03', 400 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5013, 5003, 5011, '2019-03-03', 100 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5014, 5003, 5012, '2019-03-03', 150 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5015, 5005, 5013, '2018-10-12', 3 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5016, 5006, 5014, '2018-12-10', 10 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5017, 5007, 5015, '2018-12-10', 10 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5018, 5008, 5016, '2019-01-03', 5 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5019, 5008, 5017, '2019-01-03', 25 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5020, 5009, 5018, '2019-02-02', 10 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5021, 5009, 5019, '2019-02-02', 20 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5022, 5009, 5020, '2019-02-02', 5 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5023, 5009, 5021, '2019-02-02', 15 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5024, 5009, 5022, '2019-02-02', 3 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5025, 5010, 5023, '2019-02-05', 20 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5026, 5010, 5024, '2019-02-05', 20 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5027, 5010, 5025, '2019-02-05', 50 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5028, 5011, 5026, '2019-02-02', 40 ); 
+INSERT INTO ordered( orderID, supplierID, productID, orderDate, quantityOrdered ) VALUES ( 5029, 5012, 5027, '2019-02-03', 50 ); 
 
--- update clothes set
---     (5000 , 'Tshirt' ,'XL' , "AllTime"),
---     (5001 , 'Jeans' , 'XL'  , "AllTime"),
--- 	(5002 , 'Trousers', 'M', "Summer Wear");
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1102, 5005, '2019-03-28', 80 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1103, 5006, '2019-03-28', 85 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1104, 5007, '2019-03-28', 150 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1105, 5008, '2019-03-28', 50 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1106, 5009, '2019-03-05', 10 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1107, 5010, '2019-03-05', 200 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1108, 5011, '2019-03-05', 250 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1109, 5012, '2019-03-05', 400 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1110, 5013, '2019-03-05', 100 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1111, 5014, '2019-03-05', 150 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1112, 5015, '2018-10-22', 3 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1113, 5016, '2018-12-20', 10 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1114, 5017, '2018-12-18', 10 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1115, 5018, '2019-02-03', 5 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1116, 5019, '2019-01-20', 20 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1117, 5020, '2019-03-03', 10 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1118, 5021, '2019-03-03', 20 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1119, 5022, '2019-03-03', 5 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1120, 5023, '2019-03-03', 15 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1121, 5024, '2019-03-03', 3 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1122, 5025, '2019-02-25', 20 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1123, 5026, '2019-02-25', 20 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1124, 5027, '2019-02-25', 50 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1125, 5028, '2019-02-25', 40 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1126, 5029, '2019-02-25', 20 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1127, 5029, '2019-03-02', 20 ); 
+INSERT INTO supplied( supplyID, orderID, supplyDate, quantitySupplied ) VALUES ( 1128, 5019, '2019-01-25', 5 ); 
 
-insert into supplier values
-    (2000 , "Shakti" , 8281112720 , 'West bengal' , 'shakti@gmail.com' ),
-    (3008 , "Yonex" , 8281112721 , 'Kerala' , 'yo@gmail.com' ),
-	(5001,  "BlackBerry", 9048451650, 'US', 'info@bb.com');
-    
+INSERT INTO discount( discountID, amount, discountPercent, validUpto, details, termsAndConditions ) VALUES ( 80021, 1000.00, 12.00, '2020-12-07', 'flat 12% discount on Sony TVs', 'Max Discount Rs. 1000.' ); 
+INSERT INTO discount( discountID, amount, discountPercent, validUpto, details, termsAndConditions ) VALUES ( 80022, 200.00, 10.00, '2019-05-05', '10% discount on latest blackberry', 'Upto Rs. 200' ); 
+INSERT INTO discount( discountID, amount, discountPercent, validUpto, details, termsAndConditions ) VALUES ( 80023, 5000.00, 5.00, '2019-04-04', '5% discount on latest phones', 'Upto Rs. 5000' ); 
 
-insert into ordered values
-    (1000 , 2000 , 1001 , '2019-01-01' , 100),
-    (1003 , 3008 , 4000 , '2018-12-01' , 10),
-	(5004 , 5001 , 5002, '2019-02-04', 10);
+INSERT INTO offers( discountID, productID ) VALUES ( 80021, 5016 ); 
+INSERT INTO offers( discountID, productID ) VALUES ( 80022, 5027 ); 
+INSERT INTO offers( discountID, productID ) VALUES ( 80023, 5014 ); 
+INSERT INTO offers( discountID, productID ) VALUES ( 80023, 5015 ); 
 
-insert into supplied values
-    (1100 , 1000 , '2019-01-26' , 80),
-    (1101 , 1003 , '2019-01-24' , 10);
+INSERT INTO customer( customerID, customerName, phoneNo, customerAddress, emailID, joinDate, moneySpent ) VALUES ( 100010103, 'Sparsh', 8281112751, 'Palakkad', 'sparsh@gmail.com', '2019-03-30', 94998.10 ); 
+INSERT INTO customer( customerID, customerName, phoneNo, customerAddress, emailID, joinDate, moneySpent ) VALUES ( 100010104, 'Arpit', 8285164988, 'Palakkad', 'arpit@gmail.com', '2019-03-30', 15780.00 ); 
+INSERT INTO customer( customerID, customerName, phoneNo, customerAddress, emailID, joinDate, moneySpent ) VALUES ( 100010105, 'Pankaj', 8492221564, 'Palakkad', 'pankaj@gmail.com', '2019-03-30', 1209.00 ); 
+INSERT INTO customer( customerID, customerName, phoneNo, customerAddress, emailID, joinDate, moneySpent ) VALUES ( 100010106, 'Dheeraj', 8946561989, 'Coimbatore', 'dheeraj@gmail.com', '2019-03-30', 7920.00 ); 
+INSERT INTO customer( customerID, customerName, phoneNo, customerAddress, emailID, joinDate, moneySpent ) VALUES ( 100010107, 'Princy', 8944651626, 'Balrampur', 'princy@gmail.com', '2019-03-30', 22960.00 ); 
+INSERT INTO customer( customerID, customerName, phoneNo, customerAddress, emailID, joinDate, moneySpent ) VALUES ( 100010108, 'Vyom', 8196169458, 'Pune', 'vyom@gmail.com', '2019-03-30', 38192.00 ); 
 
+INSERT INTO bill( billNo, billDate, customerID, amount ) VALUES ( 111111119, '2019-03-30', 100010103, 94998.10 ); 
+INSERT INTO bill( billNo, billDate, customerID, amount ) VALUES ( 111111120, '2019-03-30', 100010104, 10080.00 ); 
+INSERT INTO bill( billNo, billDate, customerID, amount ) VALUES ( 111111121, '2019-03-30', 100010105, 0.00 ); 
+INSERT INTO bill( billNo, billDate, customerID, amount ) VALUES ( 111111122, '2019-03-30', 100010106, 0.00 ); 
+INSERT INTO bill( billNo, billDate, customerID, amount ) VALUES ( 111111123, '2019-03-30', 100010107, 0.00 ); 
+INSERT INTO bill( billNo, billDate, customerID, amount ) VALUES ( 111111124, '2019-03-30', 100010108, 0.00 ); 
+INSERT INTO bill( billNo, billDate, customerID, amount ) VALUES ( 111111125, '2019-03-30', 100010105, 317.00 ); 
+INSERT INTO bill( billNo, billDate, customerID, amount ) VALUES ( 111111126, '2019-03-30', 100010106, 6360.00 ); 
+INSERT INTO bill( billNo, billDate, customerID, amount ) VALUES ( 111111127, '2019-03-30', 100010107, 8860.00 ); 
+INSERT INTO bill( billNo, billDate, customerID, amount ) VALUES ( 111111128, '2019-03-30', 100010108, 13698.00 ); 
 
-insert into employee values
-    (100000 , "Dharma kunwara" , "1992-06-23" , 8281112729 , "Rajasthan" , 'dharma@gmail.com' , '2001-01-01' , 100 , 'Household'  ),
-    (200000 , "Saptdeep awara" , "1996-06-24" , 8281112291 , "bengal" , 'saptdepp@gmail.com' , '2011-01-01' , 100 , 'Sports'  );
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111119, 5014, 80023, 1 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111120, 5026, null, 3 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111120, 5027, 80022, 2 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111125, 5003, null, 1 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111125, 5004, null, 2 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111125, 5005, null, 4 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111125, 5007, null, 1 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111125, 5008, null, 1 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111125, 5010, null, 1 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111125, 5011, null, 1 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111126, 5020, null, 1 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111126, 5025, null, 2 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111127, 5006, null, 2 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111127, 5017, null, 1 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111127, 5023, null, 1 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111128, 5018, null, 2 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111128, 5019, null, 1 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111128, 5020, null, 1 ); 
+INSERT INTO sales( billNo, productID, discountID, quantitySold ) VALUES ( 111111128, 5021, null, 1 ); 
 
-insert into discount values
-    (80000 , 100 , 20.00 , '2019-12-01' , "By company" , "By company"),
-    (80020 , 1000 , 18.00 , '2019-02-05' , "By market" , "Always applied"),
-	(80005 , 500, 	10, 	'2019-02-03' , "Bumper Offer", "Discount of 10% upto 500Rs"),
-	(80006 , 500, 	12, 	'2019-02-04' , "Bumper Offer", "Discount of 12% upto 500Rs");
-
-insert into offers values
-    (80000 ,  1000),
-    (80020 ,  4001),
-	(80005 ,  5000),
-	(80006 ,  5001);
-
-insert into customer values
-    (100010100 , "Saurabh" , 181112725 , "Punjab" , "saurabh@gmail.com" , '2016-01-12' , 0 ),
-    (100010101 , "gopal" , 181112715 , "up" , "gopi@gmail.com" , '2016-11-12' , 0 );
-
-insert into bill values
-    ( 111111111 , '2019-01-28' , 100010100 , 0 ),
-    ( 111111100 , '2019-01-25' , 100010100 , 0 );
-
-insert into sales values
-    (111111111 , 1000 , 80000 , 10),
-    (111111100 , 4001 , 80020 , 12);
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 10000, 'Gautam', '1990-05-28', 8943165498, 'Kanpur', 'gautam@gmail.com', '2019-03-30', 25000.00, 'Management' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 10001, 'Princy', '1993-05-05', 6549876546, 'Gurugram', 'princy@gmail.com', '2019-03-30', 20000.00, 'Management' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 10002, 'Aryan', '1993-12-30', 6549813546, 'Chattisgarh', 'aryan@gmail.com', '2019-03-30', 20000.00, 'Management' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 10003, 'Ishika', '1992-11-16', 8465135649, 'Bahraich', 'ishi@gmail.com', '2019-03-30', 20000.00, 'Management' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 10004, 'Kartik', '1992-06-20', 6463158649, 'Indore', 'kartik@gmail.com', '2019-03-30', 20000.00, 'Management' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 10005, 'Sakshi', '1992-12-12', 3216549946, 'Saharanpur', 'sakshi@gmail.com', '2019-03-30', 20000.00, 'Management' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 10006, 'Mayank', '1990-01-13', 3216549764, 'Ghaziabad', 'mayank@gmail.com', '2019-03-30', 25000.00, 'Management' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 200001, 'Amandeep', '1990-02-28', 8795865235, 'Punjab', 'amandeep@gmail.com', '2019-03-30', 10000.00, 'Food Section' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 200002, 'Anthony', '1990-05-26', 7984651618, 'Goa', 'anthony@gmail.com', '2019-03-30', 10000.00, 'Food Section' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 200003, 'Sam', '1991-09-08', 5168735769, 'Chennai', 'sam@gmail.com', '2019-03-30', 10000.00, 'Household' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 200004, 'Rajan', '1990-07-26', 5613468975, 'Lucknow', 'rajan@gmail.com', '2019-03-30', 10000.00, 'Household' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 200005, 'Joy', '1995-11-13', 6587923216, 'Mumbai', 'joy@gmail.com', '2019-03-30', 9000.00, 'Electronics' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 200006, 'Harsh', '1996-04-16', 6549831649, 'Pune', 'harsh@gmail.com', '2019-03-30', 9000.00, 'Electronics' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 200007, 'Kavi', '1994-02-14', 8791625472, 'Meerut', 'kavi@gmail.com', '2019-03-30', 9000.00, 'Sports' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 200008, 'Satyam', '1985-10-20', 9785461325, 'Chandigarh', 'satyam@gmail.com', '2019-03-30', 10000.00, 'Sports' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 200009, 'Mandy', '1995-08-19', 5468461369, 'Delhi', 'mandy@gmail.com', '2019-03-30', 8000.00, 'Clothes' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 200010, 'Beenu', '1996-11-21', 6489765163, 'Jaipur', 'beenu@gmail.com', '2019-03-30', 8000.00, 'Clothes' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 200011, 'Payal', '1995-01-31', 6549831654, 'Kolkata', 'payal@gmail.com', '2019-03-30', 15000.00, 'Cash' ); 
+INSERT INTO employee( employeeID, employeeName, DOB, phoneNo, employeeAddress, emailID, joinDate, salary, departmentName ) VALUES ( 200012, 'Danny', '1994-05-19', 3516879765, 'Lucknow', 'dan@gmail.com', '2019-03-30', 15000.00, 'Cash' ); 
 
