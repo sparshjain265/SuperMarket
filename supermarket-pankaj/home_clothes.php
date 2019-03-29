@@ -83,7 +83,7 @@
     require('config.php');
     
     
-          $sql = "SELECT * FROM product where departmentName = 'clothes' ";
+          $sql = "SELECT * FROM viewClothes";
       
         $run_query = mysqli_query($con,$sql);
 	if(mysqli_num_rows($run_query) > 0){
@@ -91,10 +91,11 @@
 			$productID   = $row['productID'];
 			$productName  = $row['productName'];
 			$brandName = $row['brandName'];
-			$departmentName = $row['departmentName'];
-            $costPrice = $row['costPrice'];
-            $mrp = $row['MRP'];
-            $quantity = $row['quantityStock'];
+      $category =$row['category'];
+      $size = $row ['size'];
+      $season =$row ['season'];
+         $mrp = $row['MRP'];
+            
 			echo "
             
             <div class='col-sm-3' >
@@ -104,8 +105,10 @@
               <div class='card-body text-center '>
         <h3 >$productName</h3>
         <p> MRP : $mrp </p>
-        <p> Quantity left : $quantity </p>
         <P> Brand : $brandName </p>
+        <P> Category : $category </p>
+        <P> Size: $size</p>
+        <P> Season: $Season </p>
         </div>
         </div>
                   </div>

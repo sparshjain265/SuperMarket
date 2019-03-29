@@ -31,12 +31,9 @@
       <a class="navbar-brand" href="#">SuperMarket</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Admin</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Hi Admin</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
@@ -50,11 +47,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">Admin</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Dashboard</a></li>
+        <li class="active"><a href="admin.php">Dashboard</a></li>
         <li><a href="#">Insert</a></li>
         <li><a href="#">Delete</a></li>
         <li><a href="#">Employee</a></li>
@@ -66,9 +63,9 @@
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav hidden-xs">
-      <h2>Logo</h2>
+      <h2>Admin</h2>
       <ul class="nav nav-pills nav-stacked">
-      <li class="active"><a href="#">Dashboard</a></li>
+      <li class="active"><a href="Admin.php">Dashboard</a></li>
         <li><a href="#">Insert</a></li>
         <li><a href="#">Delete</a></li>
         <li><a href="#">Employee</a></li>
@@ -78,8 +75,8 @@
     
     <div class="col-sm-9">
      
-        <h4>Dashboard</h4>
-        <p>Some text..</p>
+        <h2 style="color:red;text-align:center">Dashboard</h2>
+        
       
       <div class="row">
       <a href="admin_products.php">
