@@ -15,7 +15,7 @@ begin
     where departmentName = department_name)
     select billNo, quantitySold, amount as d1, discountPercent * MRP * 0.01 as d2 
     from B natural join discount)
-    select quantitySold * d1 from C natural join bill
+    select sum(quantitySold * d1) from C natural join bill
     where extract(month from billDate) = m and extract(year from billDate) = y and d1 <= d2);
 
     if(isNull(@d1)) then
@@ -31,7 +31,7 @@ begin
     where departmentName = department_name)
     select billNo, quantitySold, amount as d1, discountPercent * MRP * 0.01 as d2 
     from B natural join discount)
-    select quantitySold * d2 from C natural join bill
+    select sum(quantitySold * d2) from C natural join bill
     where extract(month from billDate) = m and extract(year from billDate) = y and d1 > d2);
 
     if(isNull(@d2)) then

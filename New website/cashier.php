@@ -104,7 +104,7 @@ $(document).ready(function(){
     
     <div class="col-sm-9">
      
-        <h2 style="color:red;text-align:center">Products</h2>
+        <h2 style="text-align:center" class="text-danger">Products</h2>
         
    
    
@@ -199,7 +199,7 @@ $(document).ready(function(){
                  
                    
                   <form action='cart.php' method='post'>        
-                  <input type = 'submit'' class='btn btn-info btn-lg' data-toggle='modal' name='$productID' value = 'add ' />
+                  <input type = 'submit'' class='btn btn-primary btn-md' data-toggle='modal' name='$productID' value = 'add ' />
                       
                       </div>
                 </div>

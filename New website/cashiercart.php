@@ -35,7 +35,7 @@ $(document).ready(function(){
       .row.content {height: auto;} 
     }
     	.scroll {
-    max-height: 250px;
+    max-height: 300px;
     overflow-y: auto;
 	}
 	::-webkit-scrollbar {
@@ -96,6 +96,7 @@ $(document).ready(function(){
       <h2>Cashier</h2>
       <ul class="nav nav-pills nav-stacked">
       <li class="active"><a href="cashier.php">Dashboard</a></li>
+      <li class="active"><a href="checkout.php">Checkout</a></li>
         <!-- <li><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModalcart'>cart</button></li> -->
       </ul><br>
     </div>
@@ -103,8 +104,8 @@ $(document).ready(function(){
     
     <div class="col-sm-9">
      
-        <h2 style="color:red;text-align:center">Products</h2>
-        
+        <h2 style="text-align:center" class="text-danger">Checkout</h2>
+        <!-- <h2 style="text-align:center" class="text-danger">Total <?php $cart_total=0; echo$cart_total ?> </h2> -->
          
      
 
@@ -160,7 +161,7 @@ if(mysqli_num_rows($run_query) > 0){
                  
                    
                   <form action='empty_cart.php' method='post'>        
-                  <input type = 'submit' class='btn btn-info btn-lg' data-toggle='modal' name='$productID' value = 'delete ' />
+                  <input type = 'submit' class='btn btn-primary btn-sm' data-toggle='modal' name='$productID' value = 'delete ' />
                   </form>
                       
                       </div>
@@ -176,15 +177,11 @@ if(mysqli_num_rows($run_query) > 0){
   // header( "Location:cashiercart.php" ); 
    ?>
 
-<div class="col-sm-9">
      
-        <h2 style="color:red;text-align:center">Total <?php echo$cart_total ?> </h2>
 
-        <form action='checkout.php' method='post'>        
-  <input type = 'submit' class='btn btn-info btn-lg' data-toggle='modal' name='$productID' value = 'checkout ' />
-</form>
 
-</div>
+
+
 </div>
 
 </body>

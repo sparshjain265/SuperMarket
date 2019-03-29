@@ -291,7 +291,7 @@ $(document).ready(function(){
             
 		<div class='w3-container '>
   		<div class='scroll w3-pale-red w3-hover-shadow w3-padding-32 w3-center' style='width:100% ; border-radius : 20px;'>
-           		 <h3 >$cutomerName</h3>   
+           		 <h3 >$customerName</h3>   
 			   <P> <b>Phone Number </b> : $phoneNo </p>
 			   <p> <b>Address </b>: $customerAddress </p>
 			   <p> <b>Email ID </b>: $emailID </p>
