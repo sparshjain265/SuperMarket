@@ -146,7 +146,7 @@ CREATE TABLE offers(
 CREATE TABLE customer(
 	customerID INT(9) NOT NULL auto_increment,
 	customerName VARCHAR(50) NOT NULL,
-	phoneNo DECIMAL(9 , 0) NOT NULL,
+	phoneNo DECIMAL(10 , 0) NOT NULL,
 	customerAddress VARCHAR(200),
 	emailID VARCHAR(50) CHECK(emailID LIKE("%@%.%")),
 	joinDate DATE,
@@ -156,7 +156,7 @@ CREATE TABLE customer(
 );
 
 CREATE TABLE bill(
-	billNo DECIMAL(11 , 0) NOT NULL auto_increment,
+	billNo INT(9) NOT NULL auto_increment,
 	billDate DATE NOT NULL,
 	customerID INT(9) NOT NULL,
 	amount DECIMAL(12, 2),
@@ -166,7 +166,7 @@ CREATE TABLE bill(
 );
 
 CREATE TABLE sales(
-	billNo DECIMAL(11 , 0) NOT NULL,
+	billNo INT(9) NOT NULL,
 	productID INT(4) NOT NULL,
 	discountID INT(5),
 	quantitySold INT NOT NULL,

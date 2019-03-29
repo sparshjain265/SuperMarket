@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "arpit12345";
+$password = "9513";
 $db = "superMarket";
 
 // Create connection
