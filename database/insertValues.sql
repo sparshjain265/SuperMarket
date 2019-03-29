@@ -6,7 +6,8 @@ insert into department values
     ("Electronics" , 10002 , 4),
     ("Sports" , 10003 , 5),
     ("Clothes" , 10004 , 1),
-    ("Manager" , 10010 , 1);
+    ("Cash", 10002, 1),
+    ("Management" , 10010 , 1);
 
 
 insert into product values    
@@ -17,29 +18,29 @@ insert into product values
     (3000 , "Trimmer" , "Philips" , "Electronics" , 800.00 , 1099.00 , 20   ),
     (3001 , "Iron" , "Usha" , "Electronics" , 1000.00 , 1220.00 , 20   ),
     (4000 , "Racket" , "Yonex" , "Sports" , 1200.00 , 1700.00 , 5   ),
-    (4001 , "Volley ball" , "Nivea" , "Sports" , 600.00 , 800.00 , 10   ),
+    (4001 , "Volley ball" , "Nivea" , "Sports" , 600.00 , 800.00 , 100   ),
     (5000 , "Tshirts" , "Denim" , "Clothes" , 1200.00 , 2000.00 , 10   ),
     (5001 , "Jeans" , "Killer" , "Clothes" , 2700.00 , 3500.00 , 10   ),
 	(5002 , "Trousers", "BB"	, "Clothes", 4000.00, 5500.00, 0);
 
--- insert into foodSection values
+-- update foodSection set 
 --     (1000 , '2018-11-10' , '2019-12-31' , "100 gm"),
 --     (1001 , '2018-07-10' , '2020-12-31' , "200 gm");
 
--- insert into household values
+-- update household set
 --     (2000 , '1/2 kg' , 'Detergent'),
 --     (2001 , '200 gm' , 'Tooth paste');
 
--- insert into electronics values
+-- update electronics set
 --     (3000 , 5 , '2 year' , "Use for trimming"),
 --     (3001 , 4 , '1/2 year' , "use for iron");
 
--- insert into sports values
+-- update sports set
 --     (4000 , '1 year' ,'Yonex racket light weight' , "Badminton"),
 --     (4001 , '1/2 year' , 'Nivea balls'  , "Vollyball");
 
 
--- insert into clothes values
+-- update clothes set
 --     (5000 , 'Tshirt' ,'XL' , "AllTime"),
 --     (5001 , 'Jeans' , 'XL'  , "AllTime"),
 -- 	(5002 , 'Trousers', 'M', "Summer Wear");
@@ -77,14 +78,14 @@ insert into offers values
 	(80006 ,  5001);
 
 insert into customer values
-    (100010100 , "Saurabh" , 181112725 , "Punjab" , "saurabh@gmail.com" , '2016-01-12' , 100000.00 ),
-    (100010101 , "gopal" , 181112715 , "up" , "gopi@gmail.com" , '2016-11-12' , 100000.00 );
+    (100010100 , "Saurabh" , 181112725 , "Punjab" , "saurabh@gmail.com" , '2016-01-12' , 0 ),
+    (100010101 , "gopal" , 181112715 , "up" , "gopi@gmail.com" , '2016-11-12' , 0 );
 
 insert into bill values
-    ( 11111111111 , '2019-01-28' , 100010100 , 50000.00 ),
-    ( 11111110011 , '2019-01-25' , 100010100 , 25000.00 );
+    ( 11111111111 , '2019-01-28' , 100010100 , 0 ),
+    ( 11111110011 , '2019-01-25' , 100010100 , 0 );
 
-insert into sales values 
+insert into sales values
     (11111111111 , 1000 , 80000 , 10),
     (11111110011 , 4001 , 80020 , 12);
 
