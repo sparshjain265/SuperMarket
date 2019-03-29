@@ -9,7 +9,7 @@ CREATE TABLE department(
 );
 
 CREATE TABLE product(
-	productID INT(4),
+	productID INT(4) auto_increment,
 	productName VARCHAR(50) NOT NULL,
 	brandName VARCHAR(50) NOT NULL,
 	departmentName VARCHAR(20) NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE clothes(
 );
 
 CREATE TABLE supplier(
-	supplierID INT(4) NOT NULL,
+	supplierID INT(4) NOT NULL auto_increment,
 	supplierName VARCHAR(50) NOT NULL,
 	phoneNo DECIMAL(11, 0) NOT NULL,
 	supplierAddress VARCHAR(200) NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE supplier(
 );
 
 CREATE TABLE ordered(
-	orderID INT(4) NOT NULL,
+	orderID INT(4) NOT NULL auto_increment,
 	supplierID INT(4) NOT NULL,
 	productID INT(4) NOT NULL,
 	orderDate DATE NOT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE ordered(
 );
 
 CREATE TABLE supplied(
-	supplyID INT(4) NOT NULL,
+	supplyID INT(4) NOT NULL auto_increment,
 	orderID INT(4) NOT NULL,
 	supplyDate DATE NOT NULL,
 	quantitySupplied INT NOT NULL,
@@ -106,7 +106,7 @@ CREATE TABLE supplied(
 );
 
 CREATE TABLE employee(
-	employeeID INT(5) NOT NULL,
+	employeeID INT(5) NOT NULL auto_increment,
 	employeeName VARCHAR(50) NOT NULL,
 	DOB DATE NOT NULL,
 	phoneNo DECIMAL(11, 0) NOT NULL,
@@ -121,7 +121,7 @@ CREATE TABLE employee(
 );
 
 CREATE TABLE discount(
-	discountID INT(5) NOT NULL,
+	discountID INT(5) NOT NULL auto_increment,
 	amount DECIMAL(10,2) CHECK(amount >= 0),
 	discountPercent DECIMAL(4, 2) CHECK(discountPercent >= 0),
 	validUpto DATE NOT NULL,
@@ -144,7 +144,7 @@ CREATE TABLE offers(
 );
 
 CREATE TABLE customer(
-	customerID INT(9) NOT NULL,
+	customerID INT(9) NOT NULL auto_increment,
 	customerName VARCHAR(50) NOT NULL,
 	phoneNo DECIMAL(9 , 0) NOT NULL,
 	customerAddress VARCHAR(200),
@@ -156,7 +156,7 @@ CREATE TABLE customer(
 );
 
 CREATE TABLE bill(
-	billNo DECIMAL(11 , 0) NOT NULL,
+	billNo DECIMAL(11 , 0) NOT NULL auto_increment,
 	billDate DATE NOT NULL,
 	customerID INT(9) NOT NULL,
 	amount DECIMAL(12, 2),
